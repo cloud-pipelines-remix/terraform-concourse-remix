@@ -58,6 +58,10 @@ resource "helm_release" "concourse" {
     value = "true"
   }
   set {
+    name = "concourse.worker.baggageclaim.driver"
+    value = "overlay"
+  }
+  set {
     name  = "concourse.worker.runtime"
     value = "houdini"
   }
