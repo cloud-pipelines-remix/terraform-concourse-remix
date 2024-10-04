@@ -27,3 +27,11 @@ variable "vault_address" {
   type    = string
   default = "http://vault.vault.svc.cluster.local:8200"
 }
+
+variable "concourse_role_id" {
+  type = string
+}
+
+variable "concourse_secret_id" {
+  type = string
+}

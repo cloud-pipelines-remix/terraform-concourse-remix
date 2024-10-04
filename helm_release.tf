@@ -1,4 +1,5 @@
 resource "helm_release" "concourse" {
+  depends_on       = [kubernetes_secret.concourse_web, kubernetes_secret.concourse_worker]
   name             = "concourse"
   repository       = "https://concourse-charts.storage.googleapis.com/"
   chart            = "concourse"
@@ -58,7 +59,7 @@ resource "helm_release" "concourse" {
     value = "true"
   }
   set {
-    name = "concourse.worker.baggageclaim.driver"
+    name  = "concourse.worker.baggageclaim.driver"
     value = "overlay"
   }
   set {
