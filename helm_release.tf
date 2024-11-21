@@ -5,6 +5,7 @@ resource "helm_release" "concourse" {
   chart            = "concourse"
   namespace        = "concourse"
   create_namespace = false
+  version          = "v17.3.1"
 
   set {
     name  = "concourse.web.auth.github.enabled"
